@@ -1,0 +1,76 @@
+/* Fundal roz și font frumos */
+body {
+    font-family: 'Pacifico', cursive;
+    background-color: #f8c1d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Containerul principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+/* Butonul frumos roz */
+button {
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff3385;
+    transform: scale(1.1);
+}
+
+/* Pisica pixelata */
+#cat-img {
+    width: 150px;
+    margin-top: 20px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+/* Confetti */
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4081;
+    animation: confetti-fall 2s infinite;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, 300px); }
+}
