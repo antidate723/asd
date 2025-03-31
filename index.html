@@ -90,7 +90,7 @@
   <div class="cat-container">
     <img id="cat-gif" src="https://media.giphy.com/media/7Cr71vflxfGFO/giphy.gif?cid=790b7611s2xwuv3379z3uvvvyzakolqdz34eev7f2hpbe3cb&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Pixel Cat">
   </div>
-  <button class="surprise-button" id="surprise-button">👉 Click for a Surprise!</button>
+  <button class="surprise-button" id="surprise-button">👵👵</button>
 
   <script>
     const greetings = [
@@ -118,7 +118,6 @@
       "https://media.giphy.com/media/3mI3vqMxwuw9KUsOVg/giphy.gif?cid=790b7611s2xwuv3379z3uvvvyzakolqdz34eev7f2hpbe3cb&ep=v1_gifs_search&rid=giphy.gif&ct=g",
       "https://media.giphy.com/media/1dWIjnKz4CZhKxT9si/giphy.gif?cid=ecf05e47xy1mt20fa9u22w179y1yoxz0wfb260pzxjvogn48&ep=v1_gifs_related&rid=giphy.gif&ct=g",
       "https://media.giphy.com/media/YElBPIgqi7GlaL0Mub/giphy.gif?cid=ecf05e47xy1mt20fa9u22w179y1yoxz0wfb260pzxjvogn48&ep=v1_gifs_related&rid=giphy.gif&ct=g",  
-      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXp1dHl1eHZxMjZucTNsMm00d2VsYnlsc3R0cTR3bzVnanRzNjAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gm847x3P3bJFhmwhxT/giphy.gif",
       "https://media.giphy.com/media/x1I0ER0x3cmcHQtjjW/giphy.gif?cid=ecf05e47zsqi8lmvhhtz44vl9o6szirt3y6bew3fo586kj6t&ep=v1_gifs_related&rid=giphy.gif&ct=g",
       "https://media.giphy.com/media/wSyzkyPNOBFx3MzsoA/giphy.gif?cid=ecf05e47pomu00rnsdrajeymho6xios2b61peercvuxgwbjt&ep=v1_gifs_related&rid=giphy.gif&ct=g",
       "https://media.giphy.com/media/rJWGPM5tG3oZkihF3m/giphy.gif?cid=ecf05e47yhtg3vs20ugsy12ciusfh54xnw0hkzf70foc3kju&ep=v1_gifs_related&rid=giphy.gif&ct=g",
@@ -160,7 +159,7 @@
   catGif.src = randomCatGif;
 
   // Special surprise at 100 clicks
-  if (clickCount === 25) {
+  if (clickCount === 20) {
     showSpecialSurprise();
   }
 });
@@ -169,12 +168,12 @@
       // Display special message
       const specialMessage = document.createElement("div");
       specialMessage.className = "message";
-      specialMessage.textContent = "LA MUTLIIII ANI ANA";
+      specialMessage.textContent = "LA MUȚLI ANI ANA";
       specialMessage.style.top = "60%";
       specialMessage.style.left = "50%";
       specialMessage.style.transform = "translate(-50%, -50%)";
       specialMessage.style.fontSize = "24px";
-      specialMessage.style.color = "#ff4500"; // Orange-red
+      specialMessage.style.color = "#ff4500"; 
       document.body.appendChild(specialMessage);
   
       // Trigger confetti animation
