@@ -1,212 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cute Surprise Page</title>
-  <style>
-    /* General Styles */
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #ffe4e1; /* Soft pink background */
-      font-family: 'Pacifico', cursive;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ce faci ana</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffe4e1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
 
-    /* Cat GIF */
-    .cat-container {
-      position: absolute;
-      top: 10%;
-      text-align: center;
-      animation: bounce 2s infinite;
-    }
+        header {
+            background-color: #ffe4e1;
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-    .cat-container img {
-      width: 150px;
-    }
+        header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin: 0;
+        }
 
-    /* Button */
-    .surprise-button {
-      background-color: #ffb6c1; /* Light pink */
-      border: none;
-      border-radius: 50px;
-      padding: 15px 30px;
-      font-size: 20px;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, background-color 0.2s;
-    }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffe4e1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+        }
 
-    .surprise-button:hover {
-      background-color: #ff8da1; /* Slightly darker pink */
-      transform: scale(1.1);
-    }
+        .content p {
+            font-size: 1.2em;
+            color: #000000;
+            text-align: justify;
+        }
 
-    /* Random Text */
-    .message {
-      position: absolute;
-      font-size: 18px;
-      color: #ff69b4; /* Hot pink */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    }
+        .content p:first-child {
+            font-style: italic;
+            font-weight: bold;
+        }
 
-    /* Confetti Animation */
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #ff69b4;
-      animation: fall 3s linear infinite;
-    }
+      
 
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
 
-    @keyframes fall {
-      0% {
-        transform: translateY(-100vh);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-    }
-  </style>
+            .content p {
+                font-size: 1em;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="cat-container">
-    <img id="cat-gif" src="https://media.giphy.com/media/7Cr71vflxfGFO/giphy.gif?cid=790b7611s2xwuv3379z3uvvvyzakolqdz34eev7f2hpbe3cb&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Pixel Cat">
-  </div>
-  <button class="surprise-button" id="surprise-button">👵👵</button>
 
-  <script>
-    const greetings = [
-      "Happy Birthday! 🎉",
-      "Feliz Cumpleaños! 🎂",
-      "Joyeux Anniversaire! 🎁",
-      "Alles Gute zum Geburtstag! 🎈",
-      "Buon Compleanno! 🍰",
-      "生日快乐! 🎊",
-      "お誕生日おめでとう! 🥳",
-      "Maligayang Kaarawan! 🎂",
-      "Bon Anniversari! 🎁",
-      "Feliç Aniversari! 🎊",
-      "Grattis på födelsedagen! 🎉",
-      "Hyvää syntymäpäivää! 🎂",
-      "Boldog születésnapot! 🎈",
-      "Čestitamo rođendan! 🎁",
-      "З Днем Народження! 🎊",
-      "Χρόνια Πολλά! 🎂",
-      "Selamat Hari Lahir! 🎉",
-    ];
-  
-    const catGifs = [
-      "https://media.giphy.com/media/7Cr71vflxfGFO/giphy.gif?cid=790b7611s2xwuv3379z3uvvvyzakolqdz34eev7f2hpbe3cb&ep=v1_gifs_search&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/3mI3vqMxwuw9KUsOVg/giphy.gif?cid=790b7611s2xwuv3379z3uvvvyzakolqdz34eev7f2hpbe3cb&ep=v1_gifs_search&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/1dWIjnKz4CZhKxT9si/giphy.gif?cid=ecf05e47xy1mt20fa9u22w179y1yoxz0wfb260pzxjvogn48&ep=v1_gifs_related&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/YElBPIgqi7GlaL0Mub/giphy.gif?cid=ecf05e47xy1mt20fa9u22w179y1yoxz0wfb260pzxjvogn48&ep=v1_gifs_related&rid=giphy.gif&ct=g",  
-      "https://media.giphy.com/media/x1I0ER0x3cmcHQtjjW/giphy.gif?cid=ecf05e47zsqi8lmvhhtz44vl9o6szirt3y6bew3fo586kj6t&ep=v1_gifs_related&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/wSyzkyPNOBFx3MzsoA/giphy.gif?cid=ecf05e47pomu00rnsdrajeymho6xios2b61peercvuxgwbjt&ep=v1_gifs_related&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/rJWGPM5tG3oZkihF3m/giphy.gif?cid=ecf05e47yhtg3vs20ugsy12ciusfh54xnw0hkzf70foc3kju&ep=v1_gifs_related&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/3o6Zt6D0wctPm4ZVri/giphy.gif?cid=ecf05e47yhtg3vs20ugsy12ciusfh54xnw0hkzf70foc3kju&ep=v1_gifs_related&rid=giphy.gif&ct=g",
-      "https://media.giphy.com/media/VJTAhOzkmy7620OMK8/giphy.gif?cid=ecf05e47pomu00rnsdrajeymho6xios2b61peercvuxgwbjt&ep=v1_gifs_related&rid=giphy.gif&ct=g",
+  <p class="content"> n-am avut ce face</p>
+<div class="content">
+    <p>În mijlocul unei zile tăcute, în sala de clasă, ochii ei albaștri captau fiecare rază de lumină, pătrunzând adânc în lumea din jur. Ochi care nu cereau nimic, doar înțelegeau. Cu o claritate ce adâncea totul în jur, acești ochi erau un fel de mare nemărginită în care el se pierdea fără să-și dea seama. Fiecare clipire aducea cu sine un gând nerostit, iar el se întreba cum poate să privească altceva când acea privire spune mai mult decât cuvintele.</p>
 
-    ]; // Add more cat GIFs here
-    let clickCount = 0;
-  
-    const button = document.getElementById("surprise-button");
-    const catGif = document.getElementById("cat-gif");
-  
-    button.addEventListener("click", () => {
-  clickCount++;
+    <p>În timp ce erau împreună în bancă, privirile lor se intersectau din când în când, dar niciunul nu îndrăznea să spună ceva. O tăcere subtilă plutea în aer, nu rece, ci plină de semnificație. Cuvintele nu aveau cum să exprime ce ochii ei păreau să spună: o lume întreagă de emoții tăcute, de dorințe, de frici adânci ascunse în spatele acelei priviri limpezi.</p>
 
-  // Display random greeting
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-  const message = document.createElement("div");
-  message.className = "message";
-  message.textContent = greeting;
+    <p>La finalul zilei, ea, obosită dar liniștită, a spus că îi este somn. A urmat-o acasă, unde, în liniștea camerei, toate zgomotele din lume păreau să se stingă. Fără vreun cuvânt, fără vreun semn că ar vrea altceva, s-a ghemuit pe pieptul lui, și-a închis ochii și, în acea adiere de somn, totul s-a topit în liniștea serii. Era ca și cum între ei nu mai exista nimic altceva, decât acea conexiune mută, profundă, fără cuvinte.</p>
+</div>
 
-  // Ensure the greeting does not overlap with the button or special message
-  let topPosition, leftPosition;
-  do {
-    topPosition = Math.random() * 80 + 10; // Random position between 10% and 90%
-    leftPosition = Math.random() * 80 + 10; // Random position between 10% and 90%
-  } while (
-    (topPosition > 40 && topPosition < 60 && // Avoid vertical overlap with the button
-     leftPosition > 40 && leftPosition < 60) || // Avoid horizontal overlap with the button
-    (Math.abs(topPosition - 60) < 5 && Math.abs(leftPosition - 50) < 5) // Avoid overlap with special message
-  );
-
-  message.style.top = `${topPosition}%`;
-  message.style.left = `${leftPosition}%`;
-  document.body.appendChild(message);
-
-  // Change cat GIF
-  const randomCatGif = catGifs[Math.floor(Math.random() * catGifs.length)];
-  catGif.src = randomCatGif;
-
-  // Special surprise at 100 clicks
-  if (clickCount === 20) {
-    showSpecialSurprise();
-  }
-});
-  
-    function showSpecialSurprise() {
-      // Display special message
-      const specialMessage = document.createElement("div");
-      specialMessage.className = "message";
-      specialMessage.textContent = "LA MUȚLI ANI ANA";
-      specialMessage.style.top = "60%";
-      specialMessage.style.left = "50%";
-      specialMessage.style.transform = "translate(-50%, -50%)";
-      specialMessage.style.fontSize = "24px";
-      specialMessage.style.color = "#ff4500"; 
-      document.body.appendChild(specialMessage);
-  
-      // Trigger confetti animation
-      for (let i = 0; i < 1000; i++) {
-        const confetti = document.createElement("div");
-        confetti.className = "confetti";
-        confetti.style.left = `${Math.random() * 100}%`;
-        confetti.style.backgroundColor = getRandomColor();
-        confetti.style.animationDelay = `${Math.random() * 3}s`;
-        document.body.appendChild(confetti);
-      }
-  
-      // Display surprise image
-      const surpriseImage = document.createElement("img");
-      surpriseImage.src = "joc.jpeg"; 
-      surpriseImage.style.position = "absolute";
-      surpriseImage.style.top = "35%";
-      surpriseImage.style.left = "50%";
-      surpriseImage.style.transform = "translate(-50%, -50%)";
-      surpriseImage.style.width = "300px";
-      document.body.appendChild(surpriseImage);
-
-
-
-      setTimeout(() => {
-    window.location.href = "final.html";
-  }, 5000);
-    }
-  
-    function getRandomColor() {
-      const colors = ["#ff69b4", "#ff4500", "#ffd700", "#32cd32", "#1e90ff"];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-  </script>
+<a href="final.html" class="content">??????????????????</a>
 </body>
 </html>
